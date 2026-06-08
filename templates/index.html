@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="background-animation"></div>
-    
+
     <div class="container">
         <header>
             <div class="logo">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 17L12 22L22 17" stroke="#4facfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 12L12 17L22 12" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#00f2fe" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 17L12 22L22 17" stroke="#4facfe" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="#00f2fe" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
-                <h1>SEARCH ENGINE CNBC</h1>
+                <h1>SEARCH ENGINE CNBC : KEUANGAN</h1>
             </div>
-            <p class="subtitle">Powered by Untung, Haris, & Farhan</p>
+            <p class="subtitle">Powered by Untung, Harits, & Farhan</p>
         </header>
 
         <main>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Masukkan kata kunci (contoh: presiden)..." autocomplete="off" />
+                <input type="text" id="searchInput" placeholder="Masukkan kata kunci (contoh: presiden)..."
+                    autocomplete="off" />
                 <button id="searchBtn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20.9999 21L16.6499 16.65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path
+                            d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M20.9999 21L16.6499 16.65" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
                     </svg>
                 </button>
             </div>
@@ -42,7 +51,7 @@
             <div class="error-msg" id="errorMsg" style="display: none;"></div>
 
             <div class="results-container" id="resultsContainer" style="display: none;">
-                
+
                 <!-- Metrics Dashboard -->
                 <div class="metrics-dashboard">
                     <h3>Information Retrieval Metrics</h3>
@@ -76,7 +85,7 @@
                     <h2>Hasil Berita untuk: <span id="targetWord" class="highlight"></span></h2>
                     <span class="count-badge" id="articleCount">0 Ditemukan</span>
                 </div>
-                
+
                 <div class="articles-list" id="articlesList">
                     <!-- Articles will be injected here -->
                 </div>
@@ -120,7 +129,7 @@
 
                     // Populate UI
                     document.getElementById('targetWord').textContent = word;
-                    
+
                     // Metrics
                     document.getElementById('valPrecision').textContent = data.metrics.precision + '%';
                     document.getElementById('valRecall').textContent = data.metrics.recall + '%';
@@ -138,7 +147,7 @@
 
                     // Articles
                     document.getElementById('articleCount').textContent = data.results.length + ' Ditemukan';
-                    
+
                     if (data.results.length === 0) {
                         articlesList.innerHTML = '<div class="no-results">Tidak ada berita yang relevan ditemukan.</div>';
                     } else {
@@ -146,7 +155,7 @@
                             const card = document.createElement('div');
                             card.className = 'article-card';
                             card.style.animationDelay = `${index * 0.05}s`;
-                            
+
                             card.innerHTML = `
                                 <h4>${article.title} <span style="font-size: 0.8rem; background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; margin-left: 10px;">Skor: ${article.score}</span></h4>
                                 <p class="snippet">${article.text}</p>
@@ -174,4 +183,5 @@
         });
     </script>
 </body>
+
 </html>
