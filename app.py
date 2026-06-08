@@ -13,9 +13,10 @@ mimetypes.add_type('text/css', '.css')
 app = Flask(__name__)
 
 # Load model globally
-MODEL_PATH = './word2vec_model.bin'
-CSV_PATH = './cnbc_tokenized.csv'
-TFIDF_PATH = './tfidf_model.pkl'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'word2vec_model.bin')
+CSV_PATH = os.path.join(BASE_DIR, 'cnbc_tokenized.csv')
+TFIDF_PATH = os.path.join(BASE_DIR, 'tfidf_model.pkl')
 
 model = None
 df_corpus = None
