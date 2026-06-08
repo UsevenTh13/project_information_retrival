@@ -81,12 +81,14 @@ def search():
     try:
         synonyms = []
         if query in model.wv.key_to_index:
-            # We import nltk stopwords to filter synonyms
             import nltk
+            import os
             try:
                 stop_words = set(nltk.corpus.stopwords.words('indonesian'))
             except:
-                nltk.download('stopwords', quiet=True)
+                # Vercel filesystem is Read-Only except for /tmp
+                nltk.download('stopwords', download_dir='/tmp', quiet=True)
+                nltk.data.path.append('/tmp')
                 stop_words = set(nltk.corpus.stopwords.words('indonesian'))
             
             additional_stopwords = {"yang", "dan", "di", "ke", "dari", "untuk", "pada", "dengan", "adalah", "ini", "itu", "atau", "juga", "jadi"}
