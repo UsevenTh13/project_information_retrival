@@ -7,3 +7,4 @@ nltk==3.8.1
 PySastrawi==1.2.0
 setuptools
 wheel
+gunicorn
