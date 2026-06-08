@@ -1,0 +1,17 @@
+# Abaikan file model dan data mentah raksasa saat deploy ke Vercel
+word2vec_model.bin
+tfidf_model.pkl
+*.pdf
+*.csv
+*.pkl
+temp_w2v/
+
+# Abaikan script pelatihan lokal
+process_pdf_to_pickle.py
+pipeline.py
+train_model.py
+train_tfidf.py
+test_extract.py
+
+# Abaikan dependensi dev
+requirements-dev.txt
