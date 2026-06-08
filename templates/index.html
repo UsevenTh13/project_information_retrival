@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <img src="{{ url_for('static', filename='UNRI NEW LOGO.png') }}" class="unri-logo" alt="UNRI Logo">
     <div class="background-animation"></div>
 
     <div class="container">
@@ -157,8 +158,16 @@
                             card.style.animationDelay = `${index * 0.05}s`;
 
                             card.innerHTML = `
-                                <h4>${article.title} <span style="font-size: 0.8rem; background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; margin-left: 10px;">Skor: ${article.score}</span></h4>
-                                <p class="snippet">${article.text}</p>
+                                <div class="article-header" onclick="this.parentElement.classList.toggle('active')">
+                                    <div style="display:flex; align-items: center; justify-content: space-between; width: 100%;">
+                                        <h4 style="margin: 0; font-size: 1.05rem;">${article.title}</h4>
+                                        <span class="score-badge">Skor: ${article.score}</span>
+                                    </div>
+                                    <div class="dropdown-icon">▼</div>
+                                </div>
+                                <div class="article-body">
+                                    <p class="snippet">${article.text}</p>
+                                </div>
                             `;
                             articlesList.appendChild(card);
                         });
