@@ -1,0 +1,38 @@
+URL,Title,Relevansi,Ground_Truth,Confusion
+https://www.cnbcindonesia.com/market/20260302220503-17-715353/melirik-arah-,"Melirik Arah Pasar Modal RI di 2026, Bakal Cerah?",True,False,FP
+https://www.cnbcindonesia.com/news/20260305082510-4-716156/breaking-china-,"Breaking: China Turunkan Pertumbuhan Ekonomi di 2026, 4,5-5%",False,False,TN
+https://www.cnbcindonesia.com/market/20251224143345-17-697045/danantara-,"Danantara Resmi Diluncurkan, Kelola Aset Rp 15.000 Triliun",True,False,FP
+https://www.cnbcindonesia.com/news/20251225070624-4-697246/catatan-utang-,Catatan Utang Negara Sepanjang 2025,False,False,TN
+https://www.cnbcindonesia.com/news/20260304081021-4-715990/ri-cetak-surplus-,"Wapres Ini Mau Dimakzulkan, Sempat Ngaku Siap Bunuh Presiden",False,False,TN
+https://www.cnbcindonesia.com/news/20260303113010-4-715620/ihsg-melemah-,Bos OJK Ungkap Utang Pinjol Warga RI Nyaris Tembus Rp100 Triliun,False,False,TN
+https://www.cnbcindonesia.com/market/20260303155002-17-715700/saham-,"BPS Ungkap Penyebab Inflasi 4,76%, Sebut Efek Diskon Listrik 2025",False,False,TN
+https://www.cnbcindonesia.com/news/20260302122033-4-715500/ekonomi-ri-2026,"10 Produk RI yang Jadi Primadona di Iran: Sabun, Kopi Hingga Buah",False,False,TN
+https://www.cnbcindonesia.com/news/20260302100510-4-715470/kebijakan-bi,"Pamer Harta Raja Scam Dunia, 33 Mobil Mewah Berderet",False,False,TN
+https://www.cnbcindonesia.com/market/20260301145512-17-715300/investasi-,Banjir Barang Ilegal dari China Bikin Kredit Macet UMKM Makin Buruk,False,False,TN
+https://www.cnbcindonesia.com/news/20260228101544-4-715050/strategi-,Ini Strategi Cari Cuan Saat Perang Datang,True,False,FP
+https://www.cnbcindonesia.com/news/20260227132010-4-714900/harga-minyak-,"Iran Berkabung Massal, Ayatollah Khamenei Dibunuh di Bulan Ramadan",False,False,TN
+https://www.cnbcindonesia.com/news/20260226104044-4-714700/rupiah-melemah,"Impor Mobil Pikap India Sudah Tiba di Surabaya, Ini Reaksi Bos Kadin",False,False,TN
+https://www.cnbcindonesia.com/news/20260225111520-4-714500/utang-negara-ri,"Divonis 9 Tahun Penjara, Eks Bos PIS Yoki Firnandi Akhirnya Buka Suara",False,False,TN
+https://www.cnbcindonesia.com/market/20260225133050-17-714520/strategi-,"Aturan Indonesia Jadi Tren Dunia, Efeknya Sudah Mulai Terasa",False,False,TN
+https://www.cnbcindonesia.com/news/20260223150033-4-714100/ihsg-hari-ini,Waskita Karya & Kementerian PU Sukses Rampungkan Puluhan Huntara,False,False,TN
+https://www.cnbcindonesia.com/news/20260222113022-4-713980/bisnis-umkm-ri,"Asing Borong Rp 2,74 T Saat IHSG Naik 0,5%, Ini 10 Saham Favorit",False,False,TN
+https://www.cnbcindonesia.com/market/20260222152001-17-714010/prospek-,"Saham TKIM-INKP  Tiba-Tiba Terbang, Ada Apa?",True,False,FP
+https://www.cnbcindonesia.com/news/20260221114045-4-713760/pertumbuhan-,"Harga Pikap Impor India 50% Lebih Murah Vs Lokal, Ini Perbandingannya",False,False,TN
+https://www.cnbcindonesia.com/news/20260218101022-4-713120/bisnis-startup-ri,"Ulah Raja Ecommerce Bikin Warga Rugi, Pemerintah Marah Besar",False,False,TN
+https://www.cnbcindonesia.com/market/20260218135510-17-713150/saham-bumn,Tanda Kiamat Makin Nyata! Luas Es Laut Terus Menyusut dalam 40 Tahun,False,False,TN
+https://www.cnbcindonesia.com/news/20260217102000-4-712950/ekspor-impor-ri,Sumitronomics 4.0: Melawan Neokolonialisme Digital,False,False,TN
+https://www.cnbcindonesia.com/news/20260215122055-4-712510/perdagangan-,"50 Peluang Usaha Hampers Lebaran 2026 untuk Keluarga, Teman & Klien",False,False,TN
+https://www.cnbcindonesia.com/news/20260214104044-4-712300/kinerja-bank,"Harga Minyak Mendidih Karena Iran vs AS, Puluhan Emiten Ini Siap Pesta",False,False,TN
+https://www.cnbcindonesia.com/news/20260213112055-4-712110/strategi-,Prabowo: Pertemuan Board of Peace untuk Upayakan Perdamaian di Gaza,False,False,TN
+https://www.cnbcindonesia.com/news/20260211121033-4-711710/industri-,Marhaban Ya Ramadan: Ini  Kondisi Dompet Warga RI Jelang Puasa,False,False,TN
+https://www.cnbcindonesia.com/news/20260209115022-4-711300/pasar-keuangan,"Daftar 10 Ikan Paling Beracun di Dunia, Wajib Tahu!",False,False,TN
+https://www.cnbcindonesia.com/news/20260207113044-4-710900/bisnis-digital,Prabowo Bantah MBG Hambur-Hamburkan Uang: Ini Hasil Efisiensi Anggaran,False,False,TN
+https://www.cnbcindonesia.com/market/20260207143055-17-710930/investasi-,"Praktik Investor Nakal Tak Hanya di RI, MSCI Bilang India Juga Ada",True,False,FP
+https://www.cnbcindonesia.com/news/20260206104022-4-710720/ekonomi-global,"Indonesia Pasar Terbesar Restoran Jepang di ASEAN, Ada 6.500 Gerai",False,False,TN
+https://www.cnbcindonesia.com/news/20260205112033-4-710520/pasar-modal-ri,"Potret Terbaru Banjir Besar Terjang Bogor, Rumah Retak-Prabotan Rusak",False,False,TN
+https://www.cnbcindonesia.com/news/20260204101044-4-710310/kebijakan-,"Hilal Insentif Belum Jelas, Target Penjualan Mobil 2026 Dipatok Segini",True,False,FP
+https://www.cnbcindonesia.com/news/20260203105055-4-710120/industri-energi,"Pedagang HP China Sudah Pasrah, Jualan Makin Susah di 2026",False,False,TN
+https://www.cnbcindonesia.com/news/20260202111033-4-709920/ekspor-sawit,LRT Jabodebek Siap Dukung Penguatan Transportasi Publik Perkotaan,False,False,TN
+https://www.cnbcindonesia.com/news/20260201103055-4-709700/ekonomi-,MSCI Bukan Segalanya! Ini Pola Baru Pergerakan IHSG,True,False,FP
+https://www.cnbcindonesia.com/news/20260131112022-4-709500/pasar-keuangan-,Breaking: Jepang Resmi Hidupkan Nuklir Terbesar Dunia Hari Ini,False,False,TN
+https://www.cnbcindonesia.com/news/20260128105055-4-708900/bisnis-indonesia,"Video: Harga Emas Meroket, Nasabah BSI Naik & Transaksi Tembus 1 Juta",False,False,TN
