@@ -60,6 +60,9 @@ def load_data():
     else:
         print("Model TF-IDF tidak ditemukan. Pastikan Anda sudah menjalankan train_tfidf.py")
 
+# Memuat model saat file diimpor (Sangat penting untuk Vercel)
+load_data()
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -194,8 +197,11 @@ if __name__ == '__main__':
             train_tfidf.train_and_save_tfidf()
             
             print("\n[SELESAI] Data lama berhasil ditimpa dengan data baru yang sudah dilatih!\n")
+            
+            # Reload data after training
+            load_data()
         else:
             print("Baik, menggunakan model dan corpus yang sudah ada (tidak menimpa).\n")
 
-    load_data()
     app.run(debug=True, port=5000)
+
