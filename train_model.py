@@ -33,6 +33,30 @@ def train_and_save_model():
 
     print(f"Menyimpan model ke {model_path}...")
     model.save(model_path)
+    
+    print("Mengekstrak JSON Synonyms (Zero Dependency) untuk Vercel...")
+    import json
+    import nltk
+    try:
+        stop_words = set(nltk.corpus.stopwords.words('indonesian'))
+    except:
+        nltk.download('stopwords', quiet=True)
+        stop_words = set(nltk.corpus.stopwords.words('indonesian'))
+        
+    additional_stopwords = {"yang", "dan", "di", "ke", "dari", "untuk", "pada", "dengan", "adalah", "ini", "itu", "atau", "juga", "jadi"}
+    stop_words.update(additional_stopwords)
+    
+    synonyms_dict = {}
+    for word in model.wv.key_to_index:
+        raw_syns = model.wv.most_similar(word, topn=30)
+        clean_syns = [w for w, score in raw_syns if w not in stop_words and len(w) > 2]
+        if clean_syns:
+            synonyms_dict[word] = clean_syns[:10]
+            
+    with open('synonyms.json', 'w') as f:
+        json.dump(synonyms_dict, f)
+    print("Selesai mengekstrak synonyms.json!")
+    
     print("Selesai! Model Word2Vec siap digunakan.")
 
 if __name__ == "__main__":

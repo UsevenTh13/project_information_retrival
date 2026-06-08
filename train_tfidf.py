@@ -32,6 +32,35 @@ def train_and_save_tfidf():
             'tfidf_matrix': tfidf_matrix
         }, f)
         
+    print("Mengekstrak JSON TF-IDF Corpus (Zero Dependency) untuk Vercel...")
+    import json
+    feature_names = vectorizer.get_feature_names_out()
+    
+    doc_vectors = []
+    for i in range(tfidf_matrix.shape[0]):
+        row = tfidf_matrix.getrow(i)
+        doc_vec = {}
+        for col, val in zip(row.indices, row.data):
+            doc_vec[feature_names[col]] = float(val)
+        doc_vectors.append(doc_vec)
+
+    idf_dict = {str(term): float(idf) for term, idf in zip(feature_names, vectorizer.idf_)}
+
+    corpus_data = []
+    df['Text'] = df['Text'].fillna('')
+    df['Title'] = df['Title'].fillna('')
+    for idx, row in df.iterrows():
+        corpus_data.append({
+            "title": str(row["Title"]),
+            "text": str(row["Text"]),
+            "tokens": row["Tokens_Str"].split(',') if pd.notna(row["Tokens_Str"]) and row["Tokens_Str"] else [],
+            "vector": doc_vectors[idx]
+        })
+
+    with open('corpus_data.json', 'w') as f:
+        json.dump({"idf": idf_dict, "docs": corpus_data}, f)
+    print("Selesai mengekstrak corpus_data.json!")
+        
     print("Selesai! Model TF-IDF siap digunakan.")
 
 if __name__ == "__main__":
