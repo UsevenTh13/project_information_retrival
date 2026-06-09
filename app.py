@@ -60,22 +60,39 @@ def search():
         return jsonify({"error": "Data sistem belum siap. Pastikan model JSON sudah dibuat."}), 500
     
     data = request.get_json()
-    query = data.get('word', '').lower().strip()
+    raw_query = data.get('word', '').lower().strip()
     
-    if not query:
+    if not raw_query:
         return jsonify({"error": "Kata tidak boleh kosong."}), 400
         
     try:
-        # 1. Get Synonyms (No NLTK, zero dependency)
-        synonyms = synonyms_dict.get(query, [])
-        search_terms = [query] + synonyms
+        # Pecah query menjadi beberapa kata (Multi-word query support)
+        query_tokens = raw_query.split()
+        
+        # Saring kata hubung dasar agar tidak ikut dicari sinonimnya
+        basic_stopwords = {"yang", "dan", "di", "ke", "dari", "untuk", "pada", "dengan", "adalah", "ini", "itu", "atau", "juga", "jadi", "sebagai", "dalam", "bahwa", "tersebut"}
+        clean_tokens = [w for w in query_tokens if w not in basic_stopwords and len(w) > 2]
+        
+        if not clean_tokens:
+            clean_tokens = query_tokens # Fallback jika user hanya mengetik kata hubung
+            
+        # 1. Get Synonyms untuk SETIAP kata kunci
+        synonyms = []
+        for token in clean_tokens:
+            token_syns = synonyms_dict.get(token, [])
+            synonyms.extend(token_syns)
+            
+        # Hapus duplikat dan pastikan kata asli tidak masuk di list sinonim
+        synonyms = list(set(synonyms) - set(clean_tokens))
+        
+        search_terms = clean_tokens + synonyms
 
         # 2. Compute Query TF-IDF Vector
         idf_dict = corpus_data.get('idf', {})
         query_vec = {}
         for term in search_terms:
             if term in idf_dict:
-                # Sklearn approximates query TF-IDF simply by TF * IDF
+                # Menghitung bobot (TF-IDF query sederhana)
                 tf = search_terms.count(term)
                 query_vec[term] = tf * idf_dict[term]
                 
@@ -94,7 +111,9 @@ def search():
         
         for idx, doc in enumerate(docs):
             tokens = doc.get("tokens", [])
-            if query in tokens:
+            
+            # Dokumen dianggap relevan (Exact Match) jika mengandung SEMUA kata asli dari user
+            if all(qt in tokens for qt in clean_tokens):
                 relevant_docs.append(idx)
                 
             doc_vec = doc.get("vector", {})
